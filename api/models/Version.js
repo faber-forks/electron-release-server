@@ -8,6 +8,13 @@
 module.exports = {
 
   attributes: {
+    version: {
+      type: 'string',
+      primaryKey: true,
+      unique: true,
+      required: true
+    },
+
     name: {
       type: 'string',
       primaryKey: true,

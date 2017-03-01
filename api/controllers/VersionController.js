@@ -145,6 +145,7 @@ module.exports = {
                 '/download/' + latestVersion.name + '/' +
                 latestVersion.assets[0].platform + '?filetype=zip'
               ),
+              version: latestVersion.name,
               name: latestVersion.name,
               notes: releaseNotes,
               pub_date: latestVersion.createdAt.toISOString()
