@@ -11,7 +11,15 @@ var fsx = require('fs-extra');
 var crypto = require('crypto');
 var Promise = require('bluebird');
 
-var SkipperDisk = require('skipper-disk');
+var SkipperDisk = require('skipper-s3');
+var s3Options = {
+  key: process.env.S3_API_KEY,
+  secret: process.env.S3_API_SECRET,
+  bucket: process.env.S3_BUCKET,
+  region: process.env.S3_REGION || undefined,
+  endpoint: process.env.S3_ENDPOINT || undefined,
+  token: process.env.S3_TOKEN || undefined
+}
 
 var AssetService = {};
 
@@ -135,7 +143,7 @@ AssetService.deleteFile = function(asset) {
     throw new Error('The provided asset does not have a file descriptor');
   }
 
-  var fileAdapter = SkipperDisk();
+  var fileAdapter = SkipperDisk(s3Options);
   var fileAdapterRmAsync = Promise.promisify(fileAdapter.rm);
 
   return fileAdapterRmAsync(asset.fd);
