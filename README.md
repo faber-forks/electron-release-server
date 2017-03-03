@@ -10,14 +10,12 @@ _Note: Despite being advertised as a release server for Electron applications, i
 
 If you host your project on your Github **and** do not need a UI for your app, then [Nuts](https://github.com/GitbookIO/nuts) is probably what you're looking for. Otherwise, you're in the same boat as I was, and you've found the right place!
 
-## Advisory Notice
-**IMPORTANT:** The release of Angular `1.6.0` has broken all `electron-release-server` versions prior to `1.4.2`. Please use the instructions under the `Maintenance` heading below to update your fork! Sorry for the inconvenience.
+## This fork only stores your assets in *** AMAZON S3 *** 
 
 ## Features
-- :sparkles: Docker :whale: support (thanks to EvgeneOskin)!
 - :sparkles: Awesome release management interface powered by [AngularJS](https://angularjs.org)
     - Authenticates with LDAP, easy to modify to another authentication method if needed
-- :sparkles: Store assets on server disk, or Amazon S3 (with minor modifications)
+- :sparkles: Store assets ~~on server disk~~, only Amazon S3 
     - Use pretty much any database for persistence, thanks to [Sails](http://sailsjs.org) & [Waterline](http://waterlinejs.org)
 - :sparkles: Simple but powerful download urls (**NOTE:** when no assets are uploaded, server returns `404` by default):
     - `/download/latest`
@@ -35,8 +33,6 @@ If you host your project on your Github **and** do not need a UI for your app, t
 - :sparkles: Serve the perfect type of assets: `.zip` for Squirrel.Mac, `.nupkg` for Squirrel.Windows, `.dmg` for Mac users, ...
 - :sparkles: Release notes endpoint
     - `/notes/:version`
-
-**NOTE:** if you don't provide the appropriate type of file for Squirrel you won't be able to update your app since the update endpoint will not return a JSON. (`.zip` for Squirrel.Mac, `.nupkg` for Squirrel.Windows).
 
 ## Deploy it / Start it
 
