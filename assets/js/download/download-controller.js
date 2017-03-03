@@ -9,10 +9,16 @@ angular.module('app.releases', [])
   .controller('DownloadController', [
     '$scope', '$routeParams', '$route', 'PubSub', 'deviceDetector',
     'DataService',
+    '$sce',
     function(
-      $scope, $routeParams, $route, PubSub, deviceDetector, DataService
+      $scope, $routeParams, $route, PubSub, deviceDetector, DataService, $sce
     ) {
       var self = this;
+
+      self.trustSrc = function(src) {
+        return $sce.trustAsResourceUrl(src);
+      }
+
       self.showAllVersions = false;
 
       self.platform = deviceDetector.os;
