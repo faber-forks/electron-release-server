@@ -17,6 +17,7 @@ var s3Options = {
   secret: process.env.S3_API_SECRET,
   bucket: process.env.S3_BUCKET,
   region: process.env.S3_REGION || undefined,
+  signatureVersion: process.env.S3_SIGNATURE || undefined,
   endpoint: process.env.S3_ENDPOINT || undefined,
   token: process.env.S3_TOKEN || undefined
 }
