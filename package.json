@@ -53,5 +53,8 @@
     "email": "arek@sredzki.com",
     "url": "http://arek.io/"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^4.0.0"
+  }
 }

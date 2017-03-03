@@ -22,6 +22,9 @@
 // no matter where we actually lift from.
 process.chdir(__dirname);
 
+// Get the dot env file and configure
+require('dotenv').config()
+
 // Ensure a "sails" can be located:
 (function() {
   var sails;
