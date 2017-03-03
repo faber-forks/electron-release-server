@@ -11,15 +11,17 @@ var fsx = require('fs-extra');
 var crypto = require('crypto');
 var Promise = require('bluebird');
 
-var SkipperDisk = require('skipper-s3');
+var SkipperDisk = require('skipper-better-s3');
 var s3Options = {
   key: process.env.S3_API_KEY,
   secret: process.env.S3_API_SECRET,
   bucket: process.env.S3_BUCKET,
   region: process.env.S3_REGION || undefined,
-  signatureVersion: process.env.S3_SIGNATURE || undefined,
   endpoint: process.env.S3_ENDPOINT || undefined,
-  token: process.env.S3_TOKEN || undefined
+  token: process.env.S3_TOKEN || undefined,
+  s3config: {
+    signatureVersion: process.env.S3_SIGNATURE || 'v4',
+  }
 }
 
 var AssetService = {};
